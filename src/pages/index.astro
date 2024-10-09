@@ -1,0 +1,29 @@
+---
+
+---
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Muestreo</title>
+        <link rel="stylesheet" href="/src/styles.css">
+    </head>
+    <body>
+        <form id="formulario">
+            <label for="elementos">Elementos</label>
+            <input name="elementos" minlength="3"/>
+            <select name="modo">
+                <option value="sin-reposicion" selected>Sin reposición</option>
+                <option value="con-reposicion">Con reposición</option>
+            </select>
+            <button type="submit">Buscar</button>
+        </form>
+        <section id="resultados">
+            <div id="combinaciones"></div>
+            <div id="distribuciones"></div>
+            <div id="valores"></div>
+        </section>
+    </body>
+    <script src="../app.js"></script>
+</html>
