@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teoría de muestreo</title>
+    </head>
+    <body>
+        <form id="formulario">
+            <label for="elementos">Elementos</label>
+            <input name="elementos" minlength="3"/>
+            <select name="modo">
+                <option value="sin-reposicion" selected>Sin reposición</option>
+                <option value="con-reposicion">Con reposición</option>
+            </select>
+            <button type="submit">Buscar</button>
+        </form>
+        <div id="resultado"></div>
+    </body>
+    <script src="./app.js"></script>
+</html>
