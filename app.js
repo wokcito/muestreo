@@ -100,9 +100,9 @@ formulario.addEventListener('submit', (e) => {
                 Población
             </caption>
             <thead>
-                <th scope="col">μ</span><sub>X</sub></th>
-                <th scope="col">σ</span><sup>2</sup><sub>X</sub></th>
-                <th scope="col">σ</span><sub>X</sub></th>
+                <th scope="col"><span>μ</span><sub>X</sub></th>
+                <th scope="col"><span>σ</span><sup>2</sup><sub>X</sub></th>
+                <th scope="col"><span>σ</span><sub>X</sub></th>
             </thead>
             <tbody>
                 <td>${calcularMediaPoblacion(elementosOrdenados)}</td>
@@ -118,10 +118,10 @@ formulario.addEventListener('submit', (e) => {
                 Muestra
             </caption>
             <thead>
-                <th scope="col">μ</span><sub>X</sub></th>
-                <th scope="col">σ</span><sup>2</sup><sub>X</sub></th>
-                <th scope="col">σ</span><sub>X</sub></th>
-                <th scope="col">μ</span><sub>S</sub><sup>2</th>
+                <th scope="col"><span>μ</span><sub>X</sub></th>
+                <th scope="col"><span>σ</span><sup>2</sup><sub>X</sub></th>
+                <th scope="col"><span>σ</span><sub>X</sub></th>
+                <th scope="col"><span>μ</span><sub>S</sub><sup>2</th>
             </thead>
             <tbody>
                 <td>${calcularMediaMuestra(combinaciones, xRaya)}</td>
