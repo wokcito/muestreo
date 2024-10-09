@@ -94,11 +94,51 @@ formulario.addEventListener('submit', (e) => {
         </table>
     `
 
+    const valoresDePoblacion = `
+        <table>
+            <caption>
+                Población
+            </caption>
+            <thead>
+                <th scope="col">μ</span><sub>X</sub></th>
+                <th scope="col">σ</span><sup>2</sup><sub>X</sub></th>
+                <th scope="col">σ</span><sub>X</sub></th>
+            </thead>
+            <tbody>
+                <td>${calcularMediaPoblacion(elementosOrdenados)}</td>
+                <td>${calcularVarianzaPoblacion(elementosOrdenados)}</td>
+                <td>${formatearNumero(Math.sqrt(calcularVarianzaPoblacion(elementosOrdenados)))}</td>
+            </tbody>
+        </table>
+    `
+
+    const valoresDeMuestra = `
+        <table>
+            <caption>
+                Muestra
+            </caption>
+            <thead>
+                <th scope="col">μ</span><sub>X</sub></th>
+                <th scope="col">σ</span><sup>2</sup><sub>X</sub></th>
+                <th scope="col">σ</span><sub>X</sub></th>
+                <th scope="col">μ</span><sub>S</sub><sup>2</th>
+            </thead>
+            <tbody>
+                <td>${calcularMediaMuestra(combinaciones, xRaya)}</td>
+                <td>${calcularVarianzaPoblacion(xRaya.map(valor => Number(valor)))}</td>
+                <td>${formatearNumero(Math.sqrt(calcularVarianzaPoblacion(xRaya.map(valor => Number(valor)))))}</td>
+                <td>${calcularMediaVarianzasMuestra(combinaciones, sCuadrado)}</td>
+            </tbody>
+        </table>
+    `
+
     contenedor.innerHTML =
         tablaCombinaciones +
         distribucionMuestralDeMedias +
         distribucionMuestralDeVarianza +
-        distribucionMuestralDeVarianzaCorregida
+        distribucionMuestralDeVarianzaCorregida +
+        valoresDePoblacion +
+        valoresDeMuestra
 })
 
 function formatearNumero(numero) {
@@ -169,4 +209,22 @@ function obtenerDistribucion(datos) {
     })
 
     return distribucion
+}
+
+function calcularMediaPoblacion(elementos) {
+    return formatearNumero(elementos.reduce((acumulador, valor) => acumulador + valor, VALOR_INICIAL_CERO) / elementos.length)
+}
+
+function calcularMediaMuestra(combinaciones, medias) {
+    return formatearNumero(medias.reduce((acumulador, media) => acumulador + Number(media), VALOR_INICIAL_CERO) / combinaciones.length)
+}
+
+function calcularVarianzaPoblacion(elementos) {
+    const media = calcularMediaPoblacion(elementos)
+
+    return formatearNumero(elementos.reduce((acumulador, valor) => acumulador + ((valor - media) ** 2), VALOR_INICIAL_CERO) / elementos.length)
+}
+
+function calcularMediaVarianzasMuestra(combinaciones, varianzas) {
+    return formatearNumero(varianzas.reduce((acumulador, varianza) => acumulador + Number(varianza), VALOR_INICIAL_CERO) / combinaciones.length)
 }
