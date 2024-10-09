@@ -1,11 +1,13 @@
-const contenedor = document.getElementById('resultado')
-const formulario = document.getElementById('formulario')
+const $formulario = document.getElementById('formulario')
+const $combinaciones = document.getElementById('combinaciones')
+const $distribuciones = document.getElementById('distribuciones')
+const $valores = document.getElementById('valores')
 
-formulario.addEventListener('submit', (e) => {
+$formulario.addEventListener('submit', (e) => {
     e.preventDefault()
 
     const datos = {};
-    const formData = new FormData(formulario)
+    const formData = new FormData($formulario)
     formData.forEach((value, key) => datos[key] = value)
 
     const { elementos, modo } = datos
@@ -131,12 +133,14 @@ formulario.addEventListener('submit', (e) => {
             </tbody>
         </table>
     `
+    $combinaciones.innerHTML = tablaCombinaciones
 
-    contenedor.innerHTML =
-        tablaCombinaciones +
+    $distribuciones.innerHTML =
         distribucionMuestralDeMedias +
         distribucionMuestralDeVarianza +
-        distribucionMuestralDeVarianzaCorregida +
+        distribucionMuestralDeVarianzaCorregida
+
+    $valores.innerHTML =
         valoresDePoblacion +
         valoresDeMuestra
 })

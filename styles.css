@@ -1,3 +1,7 @@
 .con-linea {
     text-decoration: overline;
 }
+
+#resultados {
+    display: flex;
+}
