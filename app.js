@@ -28,7 +28,7 @@ formulario.addEventListener('submit', (e) => {
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">X</th>
+                    <th scope="row"><span class="con-linea">X</span></th>
                     ${ xRaya.map(resultado => `<td>${resultado}</td>`).join('') }
                 </tr>
                 <tr>
@@ -47,7 +47,7 @@ formulario.addEventListener('submit', (e) => {
         <table>
             <thead>
                 <tr>
-                    <th scope="row">X</th>
+                    <th scope="row"><span class="con-linea">X</span></th>
                     ${ Object.keys(obtenerDistribucion(xRaya)).map(valor => `<td>${valor}</td>`).join('') }
                 </tr>
             </thead>
@@ -118,9 +118,9 @@ formulario.addEventListener('submit', (e) => {
                 Muestra
             </caption>
             <thead>
-                <th scope="col"><span>μ</span><sub>X</sub></th>
-                <th scope="col"><span>σ</span><sup>2</sup><sub>X</sub></th>
-                <th scope="col"><span>σ</span><sub>X</sub></th>
+                <th scope="col"><span>μ</span><sub class="con-linea">X</sub></th>
+                <th scope="col"><span>σ</span><sup>2</sup><sub class="con-linea">X</sub></th>
+                <th scope="col"><span>σ</span><sub class="con-linea">X</sub></th>
                 <th scope="col"><span>μ</span><sub>S</sub><sup>2</th>
             </thead>
             <tbody>
